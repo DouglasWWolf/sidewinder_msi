@@ -2324,13 +2324,10 @@
                 "value": "903F"
               },
               "pf0_interrupt_pin": {
-                "value": "NONE"
-              },
-              "pf0_msi_cap_multimsgcap": {
-                "value": "1_vector"
+                "value": "INTA"
               },
               "pf0_msi_enabled": {
-                "value": "true"
+                "value": "false"
               },
               "pf0_sub_class_interface_menu": {
                 "value": "16450_compatible_serial_controller"

@@ -1252,7 +1252,7 @@
       <spirit:vendorExtensions>
         <xilinx:busInterfaceInfo>
           <xilinx:enablement>
-            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="BUSIF_ENABLEMENT.pcie4_cfg_msi" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.MSI_EN&apos;)) = &quot;TRUE&quot; and spirit:decode(id(&apos;MODELPARAM_VALUE.MSI_X_OPTIONS&apos;)) != &quot;MSI-X_Internal&quot;)">true</xilinx:isEnabled>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="BUSIF_ENABLEMENT.pcie4_cfg_msi" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.MSI_EN&apos;)) = &quot;TRUE&quot; and spirit:decode(id(&apos;MODELPARAM_VALUE.MSI_X_OPTIONS&apos;)) != &quot;MSI-X_Internal&quot;)">false</xilinx:isEnabled>
           </xilinx:enablement>
         </xilinx:busInterfaceInfo>
       </spirit:vendorExtensions>
@@ -7633,11 +7633,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Wed Sep 07 02:15:30 UTC 2022</spirit:value>
+            <spirit:value>Wed Sep 07 07:36:25 UTC 2022</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:6fbc0213</spirit:value>
+            <spirit:value>9:b7563c8d</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -10287,7 +10287,7 @@
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.cfg_interrupt_msi_enable" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.MSI_EN&apos;)) = &quot;TRUE&quot; )">true</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.cfg_interrupt_msi_enable" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.MSI_EN&apos;)) = &quot;TRUE&quot; )">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -10310,7 +10310,7 @@
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.cfg_interrupt_msi_mmenable" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.MSI_EN&apos;)) = &quot;TRUE&quot; )">true</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.cfg_interrupt_msi_mmenable" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.MSI_EN&apos;)) = &quot;TRUE&quot; )">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -10329,7 +10329,7 @@
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.cfg_interrupt_msi_mask_update" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.MSI_EN&apos;)) = &quot;TRUE&quot; )">true</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.cfg_interrupt_msi_mask_update" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.MSI_EN&apos;)) = &quot;TRUE&quot; )">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -10352,7 +10352,7 @@
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.cfg_interrupt_msi_data" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.MSI_EN&apos;)) = &quot;TRUE&quot; )">true</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.cfg_interrupt_msi_data" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.MSI_EN&apos;)) = &quot;TRUE&quot; )">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -10378,7 +10378,7 @@
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.cfg_interrupt_msi_select" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.MSI_EN&apos;)) = &quot;TRUE&quot; )">true</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.cfg_interrupt_msi_select" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.MSI_EN&apos;)) = &quot;TRUE&quot; )">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -10404,7 +10404,7 @@
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.cfg_interrupt_msi_int" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.MSI_EN&apos;)) = &quot;TRUE&quot; or (spirit:decode(id(&apos;MODELPARAM_VALUE.MSIX_EN&apos;)) = &quot;TRUE&quot; and spirit:decode(id(&apos;MODELPARAM_VALUE.MSI_X_OPTIONS&apos;)) = &quot;MSI-X_Internal&quot;))">true</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.cfg_interrupt_msi_int" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.MSI_EN&apos;)) = &quot;TRUE&quot; or (spirit:decode(id(&apos;MODELPARAM_VALUE.MSIX_EN&apos;)) = &quot;TRUE&quot; and spirit:decode(id(&apos;MODELPARAM_VALUE.MSI_X_OPTIONS&apos;)) = &quot;MSI-X_Internal&quot;))">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -10430,7 +10430,7 @@
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.cfg_interrupt_msi_pending_status" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.MSI_EN&apos;)) = &quot;TRUE&quot; )">true</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.cfg_interrupt_msi_pending_status" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.MSI_EN&apos;)) = &quot;TRUE&quot; )">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -10452,7 +10452,7 @@
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.cfg_interrupt_msi_pending_status_data_enable" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.MSI_EN&apos;)) = &quot;TRUE&quot; )">true</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.cfg_interrupt_msi_pending_status_data_enable" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.MSI_EN&apos;)) = &quot;TRUE&quot; )">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -10478,7 +10478,7 @@
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.cfg_interrupt_msi_pending_status_function_num" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.MSI_EN&apos;)) = &quot;TRUE&quot; )">true</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.cfg_interrupt_msi_pending_status_function_num" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.MSI_EN&apos;)) = &quot;TRUE&quot; )">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -10497,7 +10497,7 @@
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.cfg_interrupt_msi_sent" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.MSI_EN&apos;)) = &quot;TRUE&quot; or (spirit:decode(id(&apos;MODELPARAM_VALUE.MSI_EN&apos;)) = &quot;FALSE&quot; and spirit:decode(id(&apos;MODELPARAM_VALUE.MSIX_EN&apos;)) = &quot;TRUE&quot; and spirit:decode(id(&apos;MODELPARAM_VALUE.MSI_X_OPTIONS&apos;)) = &quot;MSI-X_External&quot;) or (spirit:decode(id(&apos;MODELPARAM_VALUE.MSIX_EN&apos;)) = &quot;TRUE&quot; and spirit:decode(id(&apos;MODELPARAM_VALUE.MSI_X_OPTIONS&apos;)) = &quot;MSI-X_Internal&quot;))">true</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.cfg_interrupt_msi_sent" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.MSI_EN&apos;)) = &quot;TRUE&quot; or (spirit:decode(id(&apos;MODELPARAM_VALUE.MSI_EN&apos;)) = &quot;FALSE&quot; and spirit:decode(id(&apos;MODELPARAM_VALUE.MSIX_EN&apos;)) = &quot;TRUE&quot; and spirit:decode(id(&apos;MODELPARAM_VALUE.MSI_X_OPTIONS&apos;)) = &quot;MSI-X_External&quot;) or (spirit:decode(id(&apos;MODELPARAM_VALUE.MSIX_EN&apos;)) = &quot;TRUE&quot; and spirit:decode(id(&apos;MODELPARAM_VALUE.MSI_X_OPTIONS&apos;)) = &quot;MSI-X_Internal&quot;))">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -10516,7 +10516,7 @@
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.cfg_interrupt_msi_fail" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.MSI_EN&apos;)) = &quot;TRUE&quot; or (spirit:decode(id(&apos;MODELPARAM_VALUE.MSI_EN&apos;)) = &quot;FALSE&quot; and spirit:decode(id(&apos;MODELPARAM_VALUE.MSIX_EN&apos;)) = &quot;TRUE&quot; and spirit:decode(id(&apos;MODELPARAM_VALUE.MSI_X_OPTIONS&apos;)) = &quot;MSI-X_External&quot;) or (spirit:decode(id(&apos;MODELPARAM_VALUE.MSIX_EN&apos;)) = &quot;TRUE&quot; and spirit:decode(id(&apos;MODELPARAM_VALUE.MSI_X_OPTIONS&apos;)) = &quot;MSI-X_Internal&quot;))">true</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.cfg_interrupt_msi_fail" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.MSI_EN&apos;)) = &quot;TRUE&quot; or (spirit:decode(id(&apos;MODELPARAM_VALUE.MSI_EN&apos;)) = &quot;FALSE&quot; and spirit:decode(id(&apos;MODELPARAM_VALUE.MSIX_EN&apos;)) = &quot;TRUE&quot; and spirit:decode(id(&apos;MODELPARAM_VALUE.MSI_X_OPTIONS&apos;)) = &quot;MSI-X_External&quot;) or (spirit:decode(id(&apos;MODELPARAM_VALUE.MSIX_EN&apos;)) = &quot;TRUE&quot; and spirit:decode(id(&apos;MODELPARAM_VALUE.MSI_X_OPTIONS&apos;)) = &quot;MSI-X_Internal&quot;))">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -10542,7 +10542,7 @@
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.cfg_interrupt_msi_attr" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.MSI_EN&apos;)) = &quot;TRUE&quot; or (spirit:decode(id(&apos;MODELPARAM_VALUE.MSIX_EN&apos;)) = &quot;TRUE&quot; and spirit:decode(id(&apos;MODELPARAM_VALUE.MSI_X_OPTIONS&apos;)) = &quot;MSI-X_Internal&quot;))">true</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.cfg_interrupt_msi_attr" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.MSI_EN&apos;)) = &quot;TRUE&quot; or (spirit:decode(id(&apos;MODELPARAM_VALUE.MSIX_EN&apos;)) = &quot;TRUE&quot; and spirit:decode(id(&apos;MODELPARAM_VALUE.MSI_X_OPTIONS&apos;)) = &quot;MSI-X_Internal&quot;))">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -10564,7 +10564,7 @@
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.cfg_interrupt_msi_tph_present" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.MSI_EN&apos;)) = &quot;TRUE&quot; or (spirit:decode(id(&apos;MODELPARAM_VALUE.MSIX_EN&apos;)) = &quot;TRUE&quot; and spirit:decode(id(&apos;MODELPARAM_VALUE.MSI_X_OPTIONS&apos;)) = &quot;MSI-X_Internal&quot;))">true</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.cfg_interrupt_msi_tph_present" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.MSI_EN&apos;)) = &quot;TRUE&quot; or (spirit:decode(id(&apos;MODELPARAM_VALUE.MSIX_EN&apos;)) = &quot;TRUE&quot; and spirit:decode(id(&apos;MODELPARAM_VALUE.MSI_X_OPTIONS&apos;)) = &quot;MSI-X_Internal&quot;))">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -10590,7 +10590,7 @@
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.cfg_interrupt_msi_tph_type" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.MSI_EN&apos;)) = &quot;TRUE&quot; or (spirit:decode(id(&apos;MODELPARAM_VALUE.MSIX_EN&apos;)) = &quot;TRUE&quot; and spirit:decode(id(&apos;MODELPARAM_VALUE.MSI_X_OPTIONS&apos;)) = &quot;MSI-X_Internal&quot;))">true</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.cfg_interrupt_msi_tph_type" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.MSI_EN&apos;)) = &quot;TRUE&quot; or (spirit:decode(id(&apos;MODELPARAM_VALUE.MSIX_EN&apos;)) = &quot;TRUE&quot; and spirit:decode(id(&apos;MODELPARAM_VALUE.MSI_X_OPTIONS&apos;)) = &quot;MSI-X_Internal&quot;))">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -10616,7 +10616,7 @@
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.cfg_interrupt_msi_tph_st_tag" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.MSI_EN&apos;)) = &quot;TRUE&quot; or (spirit:decode(id(&apos;MODELPARAM_VALUE.MSIX_EN&apos;)) = &quot;TRUE&quot; and spirit:decode(id(&apos;MODELPARAM_VALUE.MSI_X_OPTIONS&apos;)) = &quot;MSI-X_Internal&quot;))">true</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.cfg_interrupt_msi_tph_st_tag" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.MSI_EN&apos;)) = &quot;TRUE&quot; or (spirit:decode(id(&apos;MODELPARAM_VALUE.MSIX_EN&apos;)) = &quot;TRUE&quot; and spirit:decode(id(&apos;MODELPARAM_VALUE.MSI_X_OPTIONS&apos;)) = &quot;MSI-X_Internal&quot;))">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -10642,7 +10642,7 @@
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.cfg_interrupt_msi_function_number" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.MSI_EN&apos;)) = &quot;TRUE&quot; or (spirit:decode(id(&apos;MODELPARAM_VALUE.MSIX_EN&apos;)) = &quot;TRUE&quot; and spirit:decode(id(&apos;MODELPARAM_VALUE.MULT_PF_DES&apos;)) = &quot;TRUE&quot;) )">true</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.cfg_interrupt_msi_function_number" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.MSI_EN&apos;)) = &quot;TRUE&quot; or (spirit:decode(id(&apos;MODELPARAM_VALUE.MSIX_EN&apos;)) = &quot;TRUE&quot; and spirit:decode(id(&apos;MODELPARAM_VALUE.MULT_PF_DES&apos;)) = &quot;TRUE&quot;) )">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -20226,7 +20226,7 @@
       <spirit:modelParameter spirit:dataType="std_logic_vector">
         <spirit:name>PF0_INTERRUPT_PIN</spirit:name>
         <spirit:displayName>Pf0 Interrupt Pin</spirit:displayName>
-        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.PF0_INTERRUPT_PIN" spirit:bitStringLength="3">0x0</spirit:value>
+        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.PF0_INTERRUPT_PIN" spirit:bitStringLength="3">0x1</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="string">
         <spirit:name>PF0_LINK_STATUS_SLOT_CLOCK_CONFIG</spirit:name>
@@ -20276,7 +20276,7 @@
       <spirit:modelParameter spirit:dataType="std_logic_vector">
         <spirit:name>PF0_PM_CAP_NEXTPTR</spirit:name>
         <spirit:displayName>Pf0 Pm Cap Nextptr</spirit:displayName>
-        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.PF0_PM_CAP_NEXTPTR" spirit:bitStringLength="8">0x48</spirit:value>
+        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.PF0_PM_CAP_NEXTPTR" spirit:bitStringLength="8">0x70</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="string">
         <spirit:name>PF0_PM_CAP_PMESUPPORT_D0</spirit:name>
@@ -21548,7 +21548,7 @@
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="string">
         <spirit:name>MSI_EN</spirit:name>
-        <spirit:value spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.MSI_EN">TRUE</spirit:value>
+        <spirit:value spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.MSI_EN">FALSE</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="string">
         <spirit:name>MSIX_EN</spirit:name>
@@ -22899,7 +22899,7 @@
     <spirit:parameter>
       <spirit:name>PF0_INTERRUPT_PIN</spirit:name>
       <spirit:displayName>Pf0 Interrupt Pin</spirit:displayName>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PF0_INTERRUPT_PIN" spirit:choiceRef="choice_list_f1174048" spirit:order="167">NONE</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PF0_INTERRUPT_PIN" spirit:choiceRef="choice_list_f1174048" spirit:order="167">INTA</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>PF0_LINK_STATUS_SLOT_CLOCK_CONFIG</spirit:name>
@@ -22970,6 +22970,13 @@
       <spirit:name>PF0_MSI_CAP_MULTIMSGCAP</spirit:name>
       <spirit:displayName>Pf0 Msi Cap Multimsgcap</spirit:displayName>
       <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PF0_MSI_CAP_MULTIMSGCAP" spirit:choiceRef="choice_list_5e45706a" spirit:order="205">1_vector</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:id="PARAM_ENABLEMENT.PF0_MSI_CAP_MULTIMSGCAP">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>PF0_PM_CAP_PMESUPPORT_D1</spirit:name>
@@ -25667,7 +25674,7 @@
     <spirit:parameter>
       <spirit:name>pf0_msi_enabled</spirit:name>
       <spirit:displayName>Pf0 Msi Enabled</spirit:displayName>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.pf0_msi_enabled" spirit:choiceRef="choice_list_7a7dde49" spirit:order="204">true</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.pf0_msi_enabled" spirit:choiceRef="choice_list_7a7dde49" spirit:order="204">false</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>pf1_sriov_bar5_enabled</spirit:name>
@@ -27205,6 +27212,13 @@
     <spirit:parameter>
       <spirit:name>en_msi_per_vec_masking</spirit:name>
       <spirit:value spirit:format="bool" spirit:resolve="user" spirit:id="PARAM_VALUE.en_msi_per_vec_masking" spirit:order="296">false</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:id="PARAM_ENABLEMENT.en_msi_per_vec_masking">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>coreclk_freq</spirit:name>
