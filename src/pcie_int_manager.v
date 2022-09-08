@@ -14,7 +14,7 @@
 Usage:
 
    This module is an AXI4-Lite slave that allows an application to generate or clear
-   PCIe interrupts using the MSI mechanism.
+   PCIe interrupts using the legacy interrupt mechanism.
 
    We support up to 32 interrupt sources, number 0 thru 31
 
@@ -23,35 +23,28 @@ Usage:
                     read  = Returns the current set of IRQ bits
     
        Register 1:  write = Clears the IRQ bits for the specified sources
-                    read  = Returns the count of interrupt that have been generated
+                    read  = Returns the count of IRQ_ACKs that have been generated
 
     There are also four input ports IRQ0_IN, IRQ1_IN, IRQ2_IN, and IRQ3_IN.  Strobing
     any of those input lines sets the relevant IRQ output line high.   This provides
     a mechanism for raising an IRQ line that doesn't require an AXI transaction.
 
-    In order to be able to generate MSI interrupts, the PCIe bridge must have MSI
-    interrupts and bus-master mode both enabled by the PC host  You can enable MSI
-    interrupts in Linux by issuing the command:
-          sudo setpci -s <bdf_of_the_card> 4a.w=1
-
-    Example: if the bdf of the PCIe device is 65:00.0, enable MSI interrupts with:
-          sudo setpci -s 65:00.0 4a.w=1
-
-    Busmaster mode can be enabled via:
-          sudo setpci -s <bdf_of_the_card> COMMAND=0106
-
 */
 
 
-module pcie_int_manager
+module pcie_int_manager#(parameter IRQ_COUNT=4)
 (
+    // Clock and reset
     input clk, resetn,
     
-    output IRQ_REQ,
+    // We raise this line to ask the PCIe bridge to generate an interrupt
+    output reg IRQ_REQ,
+    
+    // This line goes high when the PCIe bridge acknowledges our request
     input  IRQ_ACK,
 
+    // Strobing any of these lines high marks that interrupt source as requested
     input  IRQ0_IN, IRQ1_IN, IRQ2_IN, IRQ3_IN,
-
 
     //================== This is an AXI4-Lite slave interface ==================
         
@@ -111,15 +104,6 @@ module pcie_int_manager
     assign ashi_widle = (ashi_write == 0) && (write_state == 0);
     assign ashi_ridle = (ashi_read  == 0) && (read_state  == 0);
 
-    // This is a bitmap of the 32 interrupt sources
-    reg[31:0] irq_map;
-
-    // The IRQ_REQ output is high so long as any interrupt source is high
-    assign IRQ_REQ = (irq_map != 0);
-
-    // This is a count of the number of IRQ acknowledgements we've received
-    reg[31:0] interrupt_count;
-
     // These are the valid values for ashi_rresp and ashi_wresp
     localparam OKAY   = 0;
     localparam SLVERR = 2;
@@ -129,31 +113,69 @@ module pcie_int_manager
     // (128 bytes is 32 32-bit registers)
     localparam ADDR_MASK = 7'h7F;
 
+    // This is a bitmap of the interrupt sources
+    reg[IRQ_COUNT-1:0] irq_map;
+
+    // We have a pending irq_req any time any bit of irq_map is on
+    wire irq_req = (irq_map != 0);
+
+    // This is a count of the number of IRQ acknowledgements we've received
+    reg[31:0] irq_ack_count;
+
+    // This will be high when we're waiting for the PCIe bridge to acknowledge
+    // a change-of-state on the IRQ_REQ pin.
+    reg pending_irq_ack;
+
 
     //==========================================================================
-    // Here we are counting the number of times the PCIe core tells us that
-    // it has passed our interrupt request up to the host PC
-    //==========================================================================
-    always @(posedge clk) begin
-        if (resetn == 0)
-            interrupt_count <= 0;
-        else if (IRQ_ACK)
-            interrupt_count <= interrupt_count + 1;
-    end
-    //==========================================================================
-
-
-    //==========================================================================
-    // World's simplest state machine for handling write requests
+    // This state machine manages IRQ_REQ/IRQ_ACK interaction.
+    //
+    // As per the Xilinx PG194 documentation, the state of IRQ_REQ is not 
+    // allowed to change while we are waiting for a pending IRQ_ACK that
+    // acknowledges the prior IRQ_REQ state change.
     //==========================================================================
     always @(posedge clk) begin
 
         // If we're in reset, initialize important registers
         if (resetn == 0) begin
-            write_state <= 0;
-            irq_map     <= 0;
+            IRQ_REQ         <= 0;
+            pending_irq_ack <= 0;
+            irq_ack_count   <= 0;
+
+        // Otherwise, if we're not in reset...
+        end else begin
+
+            // Keep track of whether there is a pending IRQ_ACK from the PCIe bridge.
+            if (IRQ_ACK) begin
+                pending_irq_ack <= 0;
+                irq_ack_count   <= irq_ack_count + 1;
+            end
+
+            // If there is no pending IRQ ACK and there is a pending
+            // change of state of the IRQ_REQ line, change its state.
+            if (!pending_irq_ack && irq_req != IRQ_REQ) begin
+                IRQ_REQ         <= irq_req;
+                pending_irq_ack <= 1;
+            end
+
+        end
+    end
+    //==========================================================================
+
+
+
+
+    //==========================================================================
+    // This state machine handles AXI write-requests
+    //==========================================================================
+    always @(posedge clk) begin
+
+        // If we're in reset, initialize important registers
+        if (resetn == 0) begin
+            write_state     <= 0;
+            irq_map         <= 0;
         
-        // If we're not in reset
+        // If we're not in reset...
         end else begin
 
             // If a write-request has come in...
@@ -205,10 +227,10 @@ module pcie_int_manager
                 0:  ashi_rdata <= irq_map;
 
                 // If the user wants to read the number of interrupts generated...
-                1:  ashi_rdata <= interrupt_count;
+                1:  ashi_rdata <= irq_ack_count;
 
-                // A read of any other address returns 0
-                default: ashi_rdata <= 0;
+                // A read of any other address returns a constant
+                default: ashi_rdata <= 32'h42;
             endcase
         end
     end

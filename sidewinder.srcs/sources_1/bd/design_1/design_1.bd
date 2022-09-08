@@ -21,9 +21,9 @@
       "axi_adder": "",
       "pcie_axi_bridge": {
         "pcie_bridge": "",
-        "pcie_interrupt_mgr": "",
         "constant_zero": "",
-        "bridge_input_clock": ""
+        "bridge_input_clock": "",
+        "pcie_interrupt_mgr": ""
       },
       "ddr_ram": {
         "ddr4_ram": "",
@@ -2416,6 +2416,31 @@
               }
             }
           },
+          "constant_zero": {
+            "vlnv": "xilinx.com:ip:xlconstant:1.1",
+            "xci_name": "design_1_xlconstant_0_0",
+            "xci_path": "ip/design_1_xlconstant_0_0/design_1_xlconstant_0_0.xci",
+            "inst_hier_path": "pcie_axi_bridge/constant_zero",
+            "parameters": {
+              "CONST_VAL": {
+                "value": "0"
+              },
+              "CONST_WIDTH": {
+                "value": "1"
+              }
+            }
+          },
+          "bridge_input_clock": {
+            "vlnv": "xilinx.com:ip:util_ds_buf:2.2",
+            "xci_name": "design_1_util_ds_buf_0_1",
+            "xci_path": "ip/design_1_util_ds_buf_0_1/design_1_util_ds_buf_0_1.xci",
+            "inst_hier_path": "pcie_axi_bridge/bridge_input_clock",
+            "parameters": {
+              "C_BUF_TYPE": {
+                "value": "IBUFDSGTE"
+              }
+            }
+          },
           "pcie_interrupt_mgr": {
             "vlnv": "xilinx.com:module_ref:pcie_int_manager:1.0",
             "xci_name": "design_1_pcie_int_manager_0_0",
@@ -2691,31 +2716,6 @@
                 "direction": "I"
               }
             }
-          },
-          "constant_zero": {
-            "vlnv": "xilinx.com:ip:xlconstant:1.1",
-            "xci_name": "design_1_xlconstant_0_0",
-            "xci_path": "ip/design_1_xlconstant_0_0/design_1_xlconstant_0_0.xci",
-            "inst_hier_path": "pcie_axi_bridge/constant_zero",
-            "parameters": {
-              "CONST_VAL": {
-                "value": "0"
-              },
-              "CONST_WIDTH": {
-                "value": "1"
-              }
-            }
-          },
-          "bridge_input_clock": {
-            "vlnv": "xilinx.com:ip:util_ds_buf:2.2",
-            "xci_name": "design_1_util_ds_buf_0_1",
-            "xci_path": "ip/design_1_util_ds_buf_0_1/design_1_util_ds_buf_0_1.xci",
-            "inst_hier_path": "pcie_axi_bridge/bridge_input_clock",
-            "parameters": {
-              "C_BUF_TYPE": {
-                "value": "IBUFDSGTE"
-              }
-            }
           }
         },
         "interface_nets": {
@@ -2760,10 +2760,10 @@
           "IRQ1_IN_1": {
             "ports": [
               "constant_zero/dout",
+              "pcie_interrupt_mgr/IRQ0_IN",
               "pcie_interrupt_mgr/IRQ1_IN",
               "pcie_interrupt_mgr/IRQ2_IN",
-              "pcie_interrupt_mgr/IRQ3_IN",
-              "pcie_interrupt_mgr/IRQ0_IN"
+              "pcie_interrupt_mgr/IRQ3_IN"
             ]
           },
           "bridge_input_clock_IBUF_DS_ODIV2": {
